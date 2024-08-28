@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smegmafolio - Projects</title>
+    <style>
+        * {
+            user-select: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+            background-color: #3A6351;
+            position: relative;
+        }
+
+        .navbar-left h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #f0f4f8;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-right a {
+            color: #f0f4f8;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: 0.5s ease-in-out;
+        }
+
+        .navbar-right a:hover {
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        .navbar a:is(.active) {
+            background-color: #f0f4f8;
+            color: #3A6351;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #3a6351;
+            color: #f0f4f8;
+        }
+
+        .main-content {
+            padding: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .project-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            width: 250px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .project-card img {
+            scale: 0.9;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .project-card h3 {
+            margin: 15px;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        @media (min-width: 768px) {
+            .navbar-toggle{
+                display: none;
+            }
+            .navbar a{
+                color: #f0f4f8; /* Light color for links */
+                text-decoration: none;
+                padding: 15px;
+                border-radius: 12px;
+                margin: 0 15px;
+                font-weight: bold;
+                transition: 0.5s ease-in-out;
+            }
+            .navbar a:hover {
+            background-color: #f0f4f8;
+            color: #3A6351;
+        }
+        }
+        @media (max-width: 768px) {
+            .navbar-right {
+                display: none;
+            }
+
+            .navbar {
+                padding: 20px;
+            }
+
+            .navbar-left {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .navbar-toggle {
+                display: block;
+                font-size: 24px;
+                color: #f0f4f8;
+                cursor: pointer;
+            }
+
+            .navbar-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #3A6351;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+                z-index: 1; /* Ensure the menu is above other elements */
+            }
+
+            .navbar-menu a {
+                display: block;
+                padding: 15px;
+                color: #f0f4f8;
+                text-decoration: none;
+                border-radius: 0;
+                font-weight: normal;
+            }
+
+            .navbar-menu a:hover {
+                background-color: #f0f4f8;
+                color: #333;
+            }
+
+            .navbar-menu a.active {
+                background-color: #f0f4f8;
+                color: #3A6351;
+            }
+
+            .navbar-menu.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <h1>Smegmafolio</h1>
+            <div class="navbar-toggle">&#9776;</div>
+        </div>
+        <div class="navbar-menu">
+            <a href="index.html">Home</a>
+            <a class="active" href="projects.html">Projects</a>
+            <a href="#">About Me</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <a class="project-card" href="https://github.com/DiabolicallyInsane/DiscordBot/tree/main">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCkY_K9TX2dN21sxK2Np0a2vqnKKHGWP7Ow&s" alt="Project 1">
+            <h3>Discord Bot</h3>
+        </a>
+        <a class="project-card" href="https://github.com/DiabolicallyInsane/Sudoku-Solver-Commandline-/tree/main">
+            <img src="https://sudoku-puzzles.net/wp-content/puzzles/butterfly-sudoku/easy/1.png" alt="Project 2">
+            <h3>Sudoku Solver</h3>
+        </a>
+        <a class="project-card" href="https://github.com/DiabolicallyInsane/Snake-Game-Tkinter-/tree/main">
+            <img src="snake.png" alt="Project 3">
+            <h3>Snake Game</h3>
+        </a>
+        <a class="project-card" href="https://github.com/DiabolicallyInsane/Caesar-Cipher-/tree/main">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Caesar_cipher_left_shift_of_3.svg" alt="Project 4">
+            <h3>Caesar Cipher</h3>
+        </a>
+        <a class="project-card" href="work-in-progress-source.html">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXzqpqYo226h2n1YLA-Vt8gxOdRz5ijnDmTA&s" alt="Project 5">
+            <h3>Work in progress..</h3>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Smegmafolio</p>
+    </footer>
+
+    <script>
+        document.querySelector('.navbar-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

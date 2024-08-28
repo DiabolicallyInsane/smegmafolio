@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smegmafolio</title>
+    <style>
+        * {
+            user-select: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+            background-color: #3A6351;
+            position: relative;
+        }
+
+        .navbar-left h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #f0f4f8;
+        }
+
+        .navbar-right a {
+            color: #f0f4f8;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: 0.5s ease-in-out;
+        }
+
+        .navbar a:is(.active) {
+            background-color: #f0f4f8;
+            color: #3A6351;
+        }
+
+        .navbar-right a:hover {
+            background-color: #f0f4f8;
+            color: #3A6351;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #3A6351;
+            color: #f0f4f8;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 75vh;
+        }
+
+        .left {
+            width: 350px;
+            padding: 30px;
+            scale: 1.5;
+            border-radius: 16px;
+            background-color: #A4C3B2;
+        }
+
+        .left h2 {
+            color: #3A6351;
+        }
+
+        .left p {
+            margin-left: 2px;
+            font-size: smaller;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .left .name {
+            font-weight: 800;
+        }
+
+        .left .bt {
+            color: #3a3a3a;
+        }
+
+        .left .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 12px;
+            background-color: #3A6351;
+            color: #f0f4f8;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.5s ease-in-out;
+        }
+
+        .left .btn:hover {
+            background-color: #f0f4f8;
+            color: #3A6351;
+        }
+
+        @media (min-width: 768px) {
+            .navbar-toggle{
+                display: none;
+            }
+            .navbar a{
+                color: #f0f4f8;
+                text-decoration: none;
+                padding: 15px;
+                border-radius: 12px;
+                margin: 0 15px;
+                font-weight: bold;
+                transition: 0.5s ease-in-out;
+            }
+            .navbar a:hover {
+            background-color: #f0f4f8;
+            color: #3A6351;
+        }
+        }
+
+        @media (max-width: 768px) {
+            .left{
+                scale: 0.7 !important;
+            }
+            .navbar-right {
+                display: none;
+            }
+
+            .navbar {
+                padding: 20px;
+            }
+
+            .navbar-left {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .navbar-toggle {
+                display: block;
+                font-size: 24px;
+                color: #f0f4f8;
+                cursor: pointer;
+            }
+
+            .navbar-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #3A6351;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+                z-index: 1;
+            }
+
+            .navbar-menu a {
+                display: block;
+                padding: 15px;
+                color: #f0f4f8;
+                text-decoration: none;
+                border-radius: 0;
+                font-weight: normal;
+            }
+
+            .navbar-menu a:hover {
+                background-color: #f0f4f8;
+                color: #333;
+            }
+
+            .navbar-menu a.active {
+                background-color: #f0f4f8;
+                color: #3A6351;
+            }
+
+            .navbar-menu.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <h1>Smegmafolio</h1>
+            <div class="navbar-toggle">&#9776;</div>
+        </div>
+        <div class="navbar-menu">
+            <a class="active" href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="#">About Me</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="left">
+            <h2 class="bt">Hey, There</h2>
+            <h2 class="name">I'm Piyush Soni</h2>
+            <p class="para">A Full Stack Developer, Although a primary Backend developer</p>
+            <a href="projects.html" class="btn">View My Work</a>
+            <a href="#" class="btn">About me</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Smegmafolio</p>
+    </footer>
+
+    <script>
+        document.querySelector('.navbar-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
